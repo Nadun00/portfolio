@@ -133,7 +133,7 @@ function App() {
         <header className="site-header">
           <div className="header-inner">
             <div className="logo">
-              Nadun<span>.dev</span>
+              Nadun<span></span>
             </div>
             <nav className="nav">
               {["home", "about", "skills", "projects", "roadmap", "contact"].map(
@@ -273,13 +273,13 @@ function App() {
                 <li>
                   <span>Email</span>
                   <a href="mailto:your.email@example.com">
-                    your.email@example.com
+                    Tharukanadun711@gmail.com
                   </a>
                 </li>
                 <li>
                   <span>GitHub</span>
                   <a
-                    href="https://github.com/your-username"
+                    href="https://github.com/Nadun00"
                     target="_blank"
                     rel="noreferrer"
                   >
