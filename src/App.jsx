@@ -1,327 +1,372 @@
-export default function App() {
+const projects = [
+  {
+    title: "AI Smart Glasses for Visually Impaired (PP1)",
+    category: "AI · IoT · Assistive Tech",
+    tech: ["Python", "OpenCV", "TTS", "Raspberry Pi (concept)", "Flutter UI"],
+    description:
+      "Assistive smart glasses concept that capture the environment through a camera, process scenes on an edge-style pipeline, and provide real-time audio feedback to visually impaired users.",
+    highlights: [
+      "Designed the camera → AI processing → TTS → audio pipeline with latency breakdown (Tcam, Tproc, Ttts, Taudio).",
+      "Implemented Python scripts to simulate the pipeline and measure performance.",
+      "Designed a Flutter companion app UI for configuration, status, and diagnostics."
+    ],
+    links: {
+      github: "", // add later
+      demo: "" // optional
+    }
+  },
+  {
+    title: "MERN Stack Web Application",
+    category: "Full-Stack · Web",
+    tech: ["React", "Node.js", "Express", "MongoDB"],
+    description:
+      "A full-stack web application with a clean responsive UI, RESTful backend, and basic authentication/CRUD features.",
+    highlights: [
+      "Built REST API with Express and MongoDB models using a clear folder structure.",
+      "Developed reusable React components and forms with validation.",
+      "Focused on clean separation between frontend and backend for future scaling."
+    ],
+    links: {
+      github: "",
+      demo: ""
+    }
+  },
+  {
+    title: "Spring Boot REST API",
+    category: "Backend · Java",
+    tech: ["Spring Boot", "REST", "MySQL / MongoDB"],
+    description:
+      "Backend service using layered architecture, exposing REST endpoints for a domain such as student management or tasks.",
+    highlights: [
+      "Implemented controllers, services, and repositories with proper separation of concerns.",
+      "Used DTOs and validation for safer request/response handling.",
+      "Documented endpoints to make frontend integration easier."
+    ],
+    links: {
+      github: ""
+    }
+  },
+  {
+    title: "Flutter Companion App (Ongoing)",
+    category: "Mobile · UI",
+    tech: ["Flutter", "Material 3"],
+    description:
+      "A companion mobile UI for configuring and monitoring the AI smart glasses system. Focused on accessibility and large, clear controls.",
+    highlights: [
+      "Dashboard for device connection, status, and battery.",
+      "Settings for language, voice, and modes.",
+      "Diagnostics / logs views for events and latency metrics."
+    ],
+    links: {
+      github: ""
+    }
+  }
+];
+
+const skills = {
+  comfortable: [
+    "HTML, CSS, JavaScript (ES6+)",
+    "React.js",
+    "Node.js & Express",
+    "Spring Boot (REST APIs)",
+    "MongoDB",
+    "Git & GitHub"
+  ],
+  learning: [
+    "Flutter UI architecture",
+    "Python for AI / Computer Vision",
+    "API security & better error handling",
+    "Advanced React patterns"
+  ],
+  planned: [
+    "Deploying apps (Vercel, Render, etc.)",
+    "Docker & basic containerization",
+    "Cloud basics",
+    "Small-scale system design"
+  ]
+};
+
+const roadmap = [
+  {
+    title: "Short Term (0–3 months)",
+    items: [
+      "Polish at least one MERN app with proper auth and validation.",
+      "Stabilize the smart glasses Python pipeline and logging.",
+      "Finish core screens of the Flutter companion app."
+    ]
+  },
+  {
+    title: "Mid Term (3–6 months)",
+    items: [
+      "Deploy a full-stack app publicly (MERN or Spring Boot + React).",
+      "Learn JWT-based authentication and role-based access.",
+      "Containerize a small project with Docker."
+    ]
+  },
+  {
+    title: "Long Term (6+ months)",
+    items: [
+      "Build a full, production-style project with logging & monitoring.",
+      "Deepen AI / CV skills with one focused project.",
+      "Prepare for junior software engineer / full-stack roles."
+    ]
+  }
+];
+
+function App() {
   const scrollToSection = (id) => {
     const el = document.getElementById(id);
     if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
   return (
-    <>
-      {/* HEADER */}
-      <header className="site-header">
-        <div className="container site-header-inner">
-          <div className="logo">Nadun<span>.dev</span></div>
-          <nav className="nav-links">
-            <button className="btn-link" onClick={() => scrollToSection("home")}>
-              Home
-            </button>
-            <button className="btn-link" onClick={() => scrollToSection("about")}>
-              About
-            </button>
-            <button className="btn-link" onClick={() => scrollToSection("skills")}>
-              Skills
-            </button>
-            <button className="btn-link" onClick={() => scrollToSection("projects")}>
-              Projects
-            </button>
-            <button className="btn-link" onClick={() => scrollToSection("roadmap")}>
-              Roadmap
-            </button>
-            <button className="btn-link" onClick={() => scrollToSection("contact")}>
-              Contact
-            </button>
-          </nav>
-        </div>
-      </header>
+    <div className="page">
+      {/* Gradient background shapes */}
+      <div className="bg-blur bg-blur-1" />
+      <div className="bg-blur bg-blur-2" />
 
-      <main>
-        {/* HERO / HOME */}
-        <section className="hero" id="home">
-          <div className="container">
-            <h1 className="hero-title">
-              Software Engineer &amp; AI / IoT Enthusiast
-            </h1>
-            <p className="hero-subtitle">
-              Full-stack (MERN &amp; Spring Boot) • AI &amp; Python • Flutter UI
-            </p>
-            <p className="hero-text">
-              I’m a software engineering student from Sri Lanka who loves building
-              real-world systems: from full-stack web applications to AI-powered
-              smart glasses for visually impaired users. I focus on learning by
-              doing and continuously expanding my skills.
-            </p>
-            <div className="hero-buttons">
-              <button
-                className="btn btn-primary"
-                onClick={() => scrollToSection("projects")}
-              >
-                View My Projects
-              </button>
-              <button
-                className="btn btn-secondary"
-                onClick={() => scrollToSection("contact")}
-              >
-                Contact Me
-              </button>
+      {/* MAIN WRAPPER */}
+      <div className="shell">
+        {/* NAVBAR */}
+        <header className="site-header">
+          <div className="header-inner">
+            <div className="logo">
+              Nadun<span>.dev</span>
             </div>
+            <nav className="nav">
+              {["home", "about", "skills", "projects", "roadmap", "contact"].map(
+                (section) => (
+                  <button
+                    key={section}
+                    className="nav-link"
+                    onClick={() => scrollToSection(section)}
+                  >
+                    {section.charAt(0).toUpperCase() + section.slice(1)}
+                  </button>
+                )
+              )}
+            </nav>
           </div>
-        </section>
+        </header>
 
-        {/* ABOUT */}
-        <section className="section" id="about">
-          <div className="container">
-            <h2>About Me</h2>
-            <p>
-              I am a Software Engineering student and developer with experience in
-              full-stack web development (MERN and Spring Boot), AI / Python, and
-              IoT-style systems. I enjoy building projects that solve practical
-              problems and help real users. My current focus is on improving my
-              backend fundamentals, front-end engineering, and intelligent systems.
-            </p>
-          </div>
-        </section>
-
-        {/* SKILLS */}
-        <section className="section" id="skills">
-          <div className="container">
-            <h2>Skills</h2>
-            <div className="skills-grid">
-              <div className="skill-card">
-                <h3>Frontend</h3>
-                <ul>
-                  <li>HTML, CSS, JavaScript (ES6+)</li>
-                  <li>React.js</li>
-                  <li>Responsive design</li>
-                  <li>Flutter (companion app UI)</li>
-                </ul>
-              </div>
-              <div className="skill-card">
-                <h3>Backend</h3>
-                <ul>
-                  <li>Node.js &amp; Express (MERN)</li>
-                  <li>Spring Boot (REST APIs)</li>
-                  <li>RESTful API design</li>
-                  <li>Basic authentication &amp; validation</li>
-                </ul>
-              </div>
-              <div className="skill-card">
-                <h3>AI &amp; Systems</h3>
-                <ul>
-                  <li>Python programming</li>
-                  <li>OpenCV, basic TTS</li>
-                  <li>Edge devices (Raspberry Pi concepts)</li>
-                  <li>Latency measurement &amp; pipeline design</li>
-                </ul>
-              </div>
-              <div className="skill-card">
-                <h3>Tools &amp; Workflow</h3>
-                <ul>
-                  <li>Git &amp; GitHub</li>
-                  <li>VS Code</li>
-                  <li>Postman</li>
-                  <li>Basic Linux / CLI</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* PROJECTS */}
-        <section className="section" id="projects">
-          <div className="container">
-            <h2>Projects</h2>
-            <p style={{ marginBottom: "1.5rem" }}>
-              A selection of my work across AI, IoT, and full-stack web
-              development.
-            </p>
-            <div className="projects-grid">
-              {/* Smart Glasses project */}
-              <article className="project-card">
-                <h3>AI Smart Glasses for Visually Impaired (PP1)</h3>
-                <p className="project-meta">
-                  AI &amp; IoT • Python, Raspberry Pi (concept), OpenCV, TTS, Flutter UI
-                </p>
-                <p>
-                  Assistive smart glasses concept that capture the environment
-                  through a camera, process the scene, and provide audio feedback
-                  to visually impaired users. I focused on the hardware &amp;
-                  wearable integration, latency pipeline, and companion app UI.
-                </p>
-                <ul className="project-highlights">
-                  <li>
-                    Designed the camera → AI processing → TTS → audio pipeline with
-                    latency breakdown (Tcam, Tproc, Ttts, Taudio).
-                  </li>
-                  <li>
-                    Implemented Python scripts to simulate the processing pipeline
-                    and measure performance.
-                  </li>
-                  <li>
-                    Built a Flutter frontend-only companion app UI for monitoring
-                    and configuration.
-                  </li>
-                </ul>
-                <div className="project-links">
-                  {/* Replace with your real repo links later */}
-                  {/* <a href="https://github.com/your-username/smart-glasses" target="_blank">GitHub Repo</a> */}
-                </div>
-              </article>
-
-              {/* MERN project */}
-              <article className="project-card">
-                <h3>MERN Stack Web Application</h3>
-                <p className="project-meta">
-                  Full-Stack • React, Node.js, Express, MongoDB
-                </p>
-                <p>
-                  A full-stack web application built with the MERN stack, including
-                  CRUD features and a clean responsive UI. This project helped me
-                  practice connecting a React frontend with a REST API backend.
-                </p>
-                <ul className="project-highlights">
-                  <li>
-                    Implemented RESTful routes and MongoDB models with Express.
-                  </li>
-                  <li>
-                    Created reusable React components and forms with validation.
-                  </li>
-                  <li>
-                    Structured the project for future expansion and deployment.
-                  </li>
-                </ul>
-                <div className="project-links">
-                  {/* <a href="https://github.com/your-username/mern-project" target="_blank">GitHub Repo</a> */}
-                </div>
-              </article>
-
-              {/* Spring Boot project */}
-              <article className="project-card">
-                <h3>Spring Boot REST API</h3>
-                <p className="project-meta">
-                  Backend • Spring Boot, REST, (MySQL/MongoDB)
-                </p>
-                <p>
-                  A backend service built with Spring Boot using layered
-                  architecture, exposing clean REST endpoints for a specific domain
-                  (e.g. student management, tasks, or inventory).
-                </p>
-                <ul className="project-highlights">
-                  <li>
-                    Used controllers, services, and repositories with clear
-                    separation of concerns.
-                  </li>
-                  <li>
-                    Added validation and DTOs for safer data handling.
-                  </li>
-                  <li>
-                    Documented endpoints for frontend integration and testing.
-                  </li>
-                </ul>
-                <div className="project-links">
-                  {/* <a href="https://github.com/your-username/springboot-project" target="_blank">GitHub Repo</a> */}
-                </div>
-              </article>
-
-              {/* Flutter app (ongoing) */}
-              <article className="project-card">
-                <h3>Flutter Companion App (Ongoing)</h3>
-                <p className="project-meta">
-                  Mobile UI • Flutter, Material 3
-                </p>
-                <p>
-                  A companion mobile app UI for configuring and monitoring the AI
-                  smart glasses system. Frontend-only for now, designed with
-                  accessibility and large touch targets in mind.
-                </p>
-                <ul className="project-highlights">
-                  <li>Dashboard for device status, connection, and battery.</li>
-                  <li>Settings screen for language, voice, and modes.</li>
-                  <li>Logs / diagnostics view for latency and events.</li>
-                </ul>
-                <div className="project-links">
-                  {/* <a href="https://github.com/your-username/flutter-companion" target="_blank">GitHub Repo</a> */}
-                </div>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        {/* ROADMAP */}
-        <section className="section" id="roadmap">
-          <div className="container">
-            <h2>Learning Roadmap</h2>
-            <p style={{ marginBottom: "1rem" }}>
-              I like to plan my learning with concrete goals. Here’s what I&apos;m
-              focusing on next:
-            </p>
-            <div className="skills-grid">
-              <div className="skill-card">
-                <h3>Deepening Existing Skills</h3>
-                <ul>
-                  <li>Stronger authentication (JWT, role-based access).</li>
-                  <li>Better backend error handling and logging.</li>
-                  <li>Cleaner React and Flutter architecture.</li>
-                </ul>
-              </div>
-              <div className="skill-card">
-                <h3>New Tools &amp; Concepts</h3>
-                <ul>
-                  <li>Deploying apps (Vercel, Render, etc.).</li>
-                  <li>Basic Docker and containerization.</li>
-                  <li>Intro to system design for small projects.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* CONTACT */}
-        <section className="section" id="contact">
-          <div className="container">
-            <h2>Contact</h2>
-            <p>
-              I’m open to internships, collaborations, and interesting side
-              projects. Feel free to reach out.
-            </p>
-            <ul className="contact-list">
-              <li>
-                Email:{" "}
-                <a href="mailto:your.email@example.com">
-                  your.email@example.com
-                </a>
-              </li>
-              <li>
-                GitHub:{" "}
-                <a
-                  href="https://github.com/your-username"
-                  target="_blank"
-                  rel="noreferrer"
+        <main>
+          {/* HERO */}
+          <section className="section hero" id="home">
+            <div className="section-inner">
+              <p className="eyebrow">Software Engineer · Full-Stack · AI / IoT</p>
+              <h1 className="hero-title">
+                I build{" "}
+                <span className="hero-highlight">
+                  practical, real-world systems
+                </span>{" "}
+                while learning in public.
+              </h1>
+              <p className="hero-subtitle">
+                I&apos;m a software engineering student from Sri Lanka, working
+                across MERN, Spring Boot, Python, and Flutter. I love building
+                things that help real users – like AI-powered smart glasses for
+                visually impaired people and full-stack web apps.
+              </p>
+              <div className="hero-actions">
+                <button
+                  className="btn primary"
+                  onClick={() => scrollToSection("projects")}
                 >
-                  github.com/your-username
-                </a>
-              </li>
-              <li>
-                LinkedIn:{" "}
-                <a
-                  href="https://linkedin.com/in/your-profile"
-                  target="_blank"
-                  rel="noreferrer"
+                  View My Projects
+                </button>
+                <button
+                  className="btn ghost"
+                  onClick={() => scrollToSection("contact")}
                 >
-                  linkedin.com/in/your-profile
-                </a>
-              </li>
-            </ul>
-          </div>
-        </section>
-      </main>
+                  Get in Touch
+                </button>
+              </div>
+            </div>
+          </section>
 
-      {/* FOOTER */}
-      <footer className="site-footer">
-        <div className="container">
-          <p>© 2026 Nadun. Built with React and a lot of learning.</p>
-        </div>
-      </footer>
-    </>
+          {/* ABOUT */}
+          <section className="section" id="about">
+            <div className="section-inner">
+              <h2 className="section-title">About Me</h2>
+              <p className="section-text">
+                I learn best by building. My background combines full-stack web
+                development (MERN, Spring Boot) with early-stage work in AI and
+                IoT-style systems. I&apos;m especially interested in assistive
+                technology and tools that make complex systems easier for people
+                to use.
+              </p>
+              <p className="section-text">
+                Right now I&apos;m strengthening my fundamentals in backend and
+                front-end engineering, while continuing to explore AI pipelines,
+                latency measurement, and accessibility-focused UI design.
+              </p>
+            </div>
+          </section>
+
+          {/* SKILLS */}
+          <section className="section" id="skills">
+            <div className="section-inner">
+              <h2 className="section-title">Skills</h2>
+              <div className="skills-layout">
+                <SkillColumn
+                  title="Comfortable With"
+                  items={skills.comfortable}
+                />
+                <SkillColumn title="Currently Learning" items={skills.learning} />
+                <SkillColumn title="Planning to Learn" items={skills.planned} />
+              </div>
+            </div>
+          </section>
+
+          {/* PROJECTS */}
+          <section className="section" id="projects">
+            <div className="section-inner">
+              <h2 className="section-title">Projects</h2>
+              <p className="section-text">
+                These are the projects that currently represent how I think and
+                what I can build. Some are completed, others are still in
+                progress.
+              </p>
+              <div className="projects-grid">
+                {projects.map((project) => (
+                  <ProjectCard key={project.title} project={project} />
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* ROADMAP */}
+          <section className="section" id="roadmap">
+            <div className="section-inner">
+              <h2 className="section-title">Learning Roadmap</h2>
+              <p className="section-text">
+                I like to be honest about where I am now and where I’m heading.
+                This is the current plan I’m following to grow as a developer.
+              </p>
+              <div className="roadmap-grid">
+                {roadmap.map((phase) => (
+                  <div key={phase.title} className="roadmap-card">
+                    <h3>{phase.title}</h3>
+                    <ul>
+                      {phase.items.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* CONTACT */}
+          <section className="section" id="contact">
+            <div className="section-inner">
+              <h2 className="section-title">Contact</h2>
+              <p className="section-text">
+                I’m open to internships, collaborations, and any chance to work
+                with teams where I can learn and contribute. If my profile
+                matches what you&apos;re looking for, feel free to reach out.
+              </p>
+              <ul className="contact-list">
+                <li>
+                  <span>Email</span>
+                  <a href="mailto:your.email@example.com">
+                    your.email@example.com
+                  </a>
+                </li>
+                <li>
+                  <span>GitHub</span>
+                  <a
+                    href="https://github.com/your-username"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    github.com/your-username
+                  </a>
+                </li>
+                <li>
+                  <span>LinkedIn</span>
+                  <a
+                    href="https://linkedin.com/in/your-profile"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    linkedin.com/in/your-profile
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </main>
+
+        {/* FOOTER */}
+        <footer className="site-footer">
+          <p>© {new Date().getFullYear()} Nadun. Learning in public.</p>
+        </footer>
+      </div>
+    </div>
   );
 }
+
+function SkillColumn({ title, items }) {
+  return (
+    <div className="skill-column">
+      <h3>{title}</h3>
+      <ul>
+        {items.map((skill) => (
+          <li key={skill}>{skill}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function ProjectCard({ project }) {
+  return (
+    <article className="project-card">
+      <div className="project-header">
+        <h3>{project.title}</h3>
+        <p className="project-category">{project.category}</p>
+      </div>
+      <p className="project-description">{project.description}</p>
+      <div className="project-tags">
+        {project.tech.map((t) => (
+          <span key={t} className="tag">
+            {t}
+          </span>
+        ))}
+      </div>
+      <ul className="project-highlights">
+        {project.highlights.map((h) => (
+          <li key={h}>{h}</li>
+        ))}
+      </ul>
+      <div className="project-links">
+        {project.links.github && (
+          <a
+            href={project.links.github}
+            target="_blank"
+            rel="noreferrer"
+            className="link"
+          >
+            GitHub
+          </a>
+        )}
+        {project.links.demo && (
+          <a
+            href={project.links.demo}
+            target="_blank"
+            rel="noreferrer"
+            className="link"
+          >
+            Live Demo
+          </a>
+        )}
+      </div>
+    </article>
+  );
+}
+
+export default App;
