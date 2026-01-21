@@ -154,44 +154,55 @@ function App() {
         <main>
           {/* HERO */}
           <section className="section hero" id="home">
-            <div className="section-inner">
-              <p className="eyebrow">Software Engineer · Full-Stack · AI / IoT</p>
-              <h1 className="hero-title">
-                I build{" "}
-                <span className="hero-highlight">
-                  practical, real-world systems
-                </span>{" "}
-                while learning in public.
-              </h1>
-              <p className="hero-subtitle">
-                I&apos;m a software engineering student from Sri Lanka, working
-                across MERN, Spring Boot, Python, and Flutter. I love building
-                things that help real users – like AI-powered smart glasses for
-                visually impaired people and full-stack web apps.
-              </p>
-              <div className="hero-actions">
-                <button
-                  className="btn primary"
-                  onClick={() => scrollToSection("projects")}
-                >
-                  View My Projects
-                </button>
-                <a
-                  className="btn ghost"
-                  href="/Nadun_Bandara_FullStack_Intern.pdf"
-                  download
-       >
-                  Download CV
-                </a>
-                <button
-                  className="btn ghost"
-                  onClick={() => scrollToSection("contact")}
-                >
-                  Get in Touch
-                </button>
-              </div>
-            </div>
-          </section>
+  <div className="section-inner hero-inner">
+    <div className="hero-text-col">
+      <p className="eyebrow">Software Engineer · Full-Stack · AI / IoT</p>
+      <h1 className="hero-title">
+        I build{" "}
+        <span className="hero-highlight">
+          practical, real-world systems
+        </span>{" "}
+        while learning in public.
+      </h1>
+      <p className="hero-subtitle">
+        I&apos;m a software engineering student from Sri Lanka, working
+        across MERN, Spring Boot, Python, and Flutter. I love building
+        things that help real users – like AI-powered smart glasses for
+        visually impaired people and full-stack web apps.
+      </p>
+      <div className="hero-actions">
+        <button
+          className="btn primary"
+          onClick={() => scrollToSection("projects")}
+        >
+          View My Projects
+        </button>
+
+        <a
+          className="btn ghost"
+          href="/Nadun_Bandara_FullStack_Intern"
+          download
+        >
+          Download CV
+        </a>
+
+        <button
+          className="btn ghost"
+          onClick={() => scrollToSection("contact")}
+        >
+          Get in Touch
+        </button>
+      </div>
+    </div>
+
+    <div className="hero-photo-col">
+      <div className="hero-photo-frame">
+        <img src="/profile.jpg" alt="Portrait of Nadun" />
+      </div>
+    </div>
+  </div>
+</section>
+
 
           {/* ABOUT */}
           <section className="section" id="about">
