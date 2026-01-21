@@ -176,6 +176,13 @@ function App() {
                 >
                   View My Projects
                 </button>
+                <a
+                  className="btn ghost"
+                  href="/Nadun_Bandara_FullStack_Intern.pdf"
+                  download
+       >
+                  Download CV
+                </a>
                 <button
                   className="btn ghost"
                   onClick={() => scrollToSection("contact")}
