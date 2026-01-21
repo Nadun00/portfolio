@@ -283,17 +283,17 @@ function App() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    github.com/your-username
+                    github.com/Nadun00
                   </a>
                 </li>
                 <li>
                   <span>LinkedIn</span>
                   <a
-                    href="https://linkedin.com/in/your-profile"
+                    href="https://www.linkedin.com/in/nadun-bandara-3551aa348?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    linkedin.com/in/your-profile
+                    linkedin.com/in/nadun-bandara-3551aa348
                   </a>
                 </li>
               </ul>
