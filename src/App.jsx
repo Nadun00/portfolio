@@ -6,13 +6,14 @@ const projects = [
     description:
       "A financial management web application designed for a tea factory to record, manage, and monitor sales and expenses. The system replaces manual bookkeeping with a simple digital workflow.",
     highlights: [
-      "Designed the camera → AI processing → TTS → audio pipeline with latency breakdown (Tcam, Tproc, Ttts, Taudio).",
-      "Implemented Python scripts to simulate the pipeline and measure performance.",
-      "Designed a Flutter companion app UI for configuration, status, and diagnostics."
+      "Implemented add, edit, and delete functionality for financial transactions.",
+      "Managed both sales and expense records with categorization.",
+      "Displayed transaction history in a clean tabular interface.",
+      "Focused on usability for non-technical users in a factory environment."
     ],
     links: {
-      github: "", // add later
-      demo: "" // optional
+      github: "https://github.com/Nadun00/tea-factory-finance-management/tree/master",
+      demo: "" 
     }
   },
   {
@@ -34,33 +35,49 @@ const projects = [
     }
   },
   {
-    title: "Spring Boot REST API",
-    category: "Backend · Java",
-    tech: ["Spring Boot", "REST", "MySQL / MongoDB"],
+    title: "Rule-Based AI Chatbot for Tea Disease Diagnosis",
+    category: "Frontend · Rule-Based AI",
+    tech: ["React",
+    "JavaScript (ES6)",
+    "Axios",
+    "HTML5",
+    "CSS3",
+    "Font Awesome"],
     description:
-      "Backend service using layered architecture, exposing REST endpoints for a domain such as student management or tasks.",
+      "A rule-based AI chatbot that helps diagnose common tea leaf diseases based on visual symptoms such as leaf color. The system provides instant disease identification and basic prevention tips through an interactive chatbot interface.",
     highlights: [
-      "Implemented controllers, services, and repositories with proper separation of concerns.",
-      "Used DTOs and validation for safer request/response handling.",
-      "Documented endpoints to make frontend integration easier."
+      "Designed an interactive chatbot UI using React.",
+      "Implemented rule-based logic to diagnose tea leaf diseases.",
+      "Provided instant prevention and treatment suggestions.",
+      "Focused on usability for farmers and non-technical users."
     ],
     links: {
-      github: ""
+      github: "https://github.com/Nadun00/simple-rule_based-AI/tree/main"
     }
   },
   {
-    title: "Flutter Companion App (Ongoing)",
-    category: "Mobile · UI",
-    tech: ["Flutter", "Material 3"],
+    title: "Inventory Management System for Dental Clinic",
+    category: "Full-Stack · Web Application",
+    tech: ["React.js",
+    "JavaScript (ES6+)",
+    "Material UI",
+    "React Router",
+    "Axios",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "Mongoose"],
     description:
-      "A companion mobile UI for configuring and monitoring the AI smart glasses system. Focused on accessibility and large, clear controls.",
+      "A full-stack inventory management system developed for a dental clinic to track medical supplies and equipment. The system replaces manual inventory tracking with a clean, digital workflow.",
     highlights: [
-      "Dashboard for device connection, status, and battery.",
-      "Settings for language, voice, and modes.",
-      "Diagnostics / logs views for events and latency metrics."
+      "Built a Single Page Application (SPA) using React and Material UI.",
+      "Implemented CRUD operations for inventory items.",
+      "Integrated frontend with backend REST APIs using Axios.",
+      "Developed backend services using Node.js, Express, and MongoDB.",
+      "Added PDF export functionality using html2canvas and jsPDF."
     ],
     links: {
-      github: ""
+      github: "https://github.com/Nadun00/InventoryManagement/tree/main"
     }
   }
 ];
@@ -210,35 +227,91 @@ function App() {
           <section className="section" id="about">
             <div className="section-inner">
               <h2 className="section-title">About Me</h2>
+
               <p className="section-text">
-                I learn best by building. My background combines full-stack web
-                development (MERN, Spring Boot) with early-stage work in AI and
-                IoT-style systems. I&apos;m especially interested in assistive
-                technology and tools that make complex systems easier for people
-                to use.
+                I am a Software Engineering student currently seeking a
+                <strong> Full-Stack Development Internship</strong>.
+                I enjoy working across both frontend and backend, and I find real
+                satisfaction in building complete web applications where everything
+                comes together and actually works.
               </p>
+
               <p className="section-text">
-                Right now I&apos;m strengthening my fundamentals in backend and
-                front-end engineering, while continuing to explore AI pipelines,
-                latency measurement, and accessibility-focused UI design.
+                I have hands-on experience developing full-stack systems using
+                <strong> Java, Spring Boot, React, Node.js, Express, and MongoDB</strong>,
+                with a strong focus on REST API development and database-driven
+                applications. I enjoy designing backend logic, structuring APIs, and
+                connecting them to clean and interactive user interfaces.
               </p>
+
+              <p className="section-text">
+                What motivates me most is the process of turning an idea into a
+                working system — from writing backend logic to seeing the frontend
+                respond correctly. I learn best by building real projects, experimenting,
+                and improving through practice, and I am eager to grow by contributing
+                to real-world applications in a collaborative environment.
+              </p>
+
             </div>
           </section>
 
           {/* SKILLS */}
           <section className="section" id="skills">
-            <div className="section-inner">
-              <h2 className="section-title">Skills</h2>
-              <div className="skills-layout">
-                <SkillColumn
-                  title="Comfortable With"
-                  items={skills.comfortable}
-                />
-                <SkillColumn title="Currently Learning" items={skills.learning} />
-                <SkillColumn title="Planning to Learn" items={skills.planned} />
-              </div>
-            </div>
-          </section>
+  <div className="section-inner">
+    <h2 className="section-title">Skills</h2>
+
+    <div className="skills-layout">
+      <div className="skill-column">
+        <h3>Comfortable With</h3>
+        <ul>
+          <li>React.js</li>
+          <li>JavaScript (ES6+)</li>
+          <li>HTML5 & CSS3</li>
+          <li>Java</li>
+          <li>Spring Boot</li>
+          <li>Node.js</li>
+          <li>Express.js</li>
+          <li>MongoDB</li>
+          <li>REST API Development</li>
+          <li>Git & GitHub</li>
+          <li>Axios</li>
+          <li>Postman</li>
+        </ul>
+      </div>
+
+      <div className="skill-column">
+        <h3>Testing & Quality (QA)</h3>
+        <ul>
+          <li>Manual Testing</li>
+          <li>Test Case Design</li>
+          <li>Functional Testing</li>
+          <li>Bug Reporting & Validation</li>
+          <li>UI / Usability Testing</li>
+        </ul>
+      </div>
+
+      <div className="skill-column">
+        <h3>Currently Learning</h3>
+        <ul>
+          <li>Flutter (UI architecture)</li>
+          <li>Python for AI / Computer Vision</li>
+          <li>API security & authentication</li>
+          <li>Advanced full-stack patterns</li>
+        </ul>
+      </div>
+
+      <div className="skill-column">
+        <h3>Planning to Learn</h3>
+        <ul>
+          <li>Docker & containerization basics</li>
+          <li>Cloud fundamentals</li>
+          <li>System design basics</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 
           {/* PROJECTS */}
           <section className="section" id="projects">
