@@ -1,10 +1,10 @@
 const projects = [
   {
-    title: "AI Smart Glasses for Visually Impaired (PP1)",
-    category: "AI · IoT · Assistive Tech",
-    tech: ["Python", "OpenCV", "TTS", "Raspberry Pi (concept)", "Flutter UI"],
+    title: "Tea Factory Financial Management System",
+    category: "Full-Stack · Web Application",
+    tech: ["React", "JavaScript", "Node.js", "Express.js", "MongoDB"],
     description:
-      "Assistive smart glasses concept that capture the environment through a camera, process scenes on an edge-style pipeline, and provide real-time audio feedback to visually impaired users.",
+      "A financial management web application designed for a tea factory to record, manage, and monitor sales and expenses. The system replaces manual bookkeeping with a simple digital workflow.",
     highlights: [
       "Designed the camera → AI processing → TTS → audio pipeline with latency breakdown (Tcam, Tproc, Ttts, Taudio).",
       "Implemented Python scripts to simulate the pipeline and measure performance.",
@@ -16,18 +16,20 @@ const projects = [
     }
   },
   {
-    title: "MERN Stack Web Application",
-    category: "Full-Stack · Web",
-    tech: ["React", "Node.js", "Express", "MongoDB"],
+    title: "Skill Sharing Platform (Group Project)",
+    category: "Full-Stack · Web Application",
+    tech: ["React", "Spring Boot", "MongoDB", "REST API"],
     description:
-      "A full-stack web application with a clean responsive UI, RESTful backend, and basic authentication/CRUD features.",
+      "A full-stack skill sharing platform where users can create profiles, share skills, and interact with content through social features. The system focuses on enabling collaboration and engagement between users.",
     highlights: [
-      "Built REST API with Express and MongoDB models using a clear folder structure.",
-      "Developed reusable React components and forms with validation.",
-      "Focused on clean separation between frontend and backend for future scaling."
+      "Implemented like and unlike functionality for skill posts.",
+      "Implemented follow and unfollow functionality between users.",
+      "Built a commenting system for user interactions on posts.",
+      "Integrated frontend interactions with backend REST APIs.",
+      "Worked with MongoDB data models related to user engagement."
     ],
     links: {
-      github: "",
+      github: "https://github.com/Nadun00/task-hive-learning-platform",
       demo: ""
     }
   },
