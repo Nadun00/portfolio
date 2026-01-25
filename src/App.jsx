@@ -199,7 +199,7 @@ function App() {
 
         <a
           className="btn ghost"
-          href="/Nadun_Bandara_FullStack_Intern"
+          href="/Nadun_Bandara_FullStack_Intern.pdf"
           download
         >
           Download CV
@@ -221,6 +221,7 @@ function App() {
     </div>
   </div>
 </section>
+
 
 
           {/* ABOUT */}
