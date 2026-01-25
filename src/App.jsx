@@ -1,3 +1,14 @@
+import { motion } from "framer-motion";
+
+const sectionVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" }
+  }
+};
+
 const projects = [
   {
     title: "Tea Factory Financial Management System",
@@ -225,36 +236,45 @@ function App() {
 
 
           {/* ABOUT */}
-          <section className="section" id="about">
-            <div className="section-inner">
-              <h2 className="section-title">About Me</h2>
+          {/* ABOUT */}
+<motion.section
+  className="section"
+  id="about"
+  variants={sectionVariants}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.2 }}
+>
+  <div className="section-inner">
+    <h2 className="section-title">About Me</h2>
 
-              <p className="section-text">
-                I am a Software Engineering student currently seeking a
-                <strong> Full-Stack Development Internship</strong>.
-                I enjoy working across both frontend and backend, and I find real
-                satisfaction in building complete web applications where everything
-                comes together and actually works.
-              </p>
+    <p className="section-text">
+      I am a Software Engineering student currently seeking a
+      <strong> Full-Stack Development Internship</strong>.
+      I enjoy working across both frontend and backend, and I find real
+      satisfaction in building complete web applications where everything
+      comes together and actually works.
+    </p>
 
-              <p className="section-text">
-                I have hands-on experience developing full-stack systems using
-                <strong> Java, Spring Boot, React, Node.js, Express, and MongoDB</strong>,
-                with a strong focus on REST API development and database-driven
-                applications. I enjoy designing backend logic, structuring APIs, and
-                connecting them to clean and interactive user interfaces.
-              </p>
+    <p className="section-text">
+      I have hands-on experience developing full-stack systems using
+      <strong> Java, Spring Boot, React, Node.js, Express, and MongoDB</strong>,
+      with a strong focus on REST API development and database-driven
+      applications. I enjoy designing backend logic, structuring APIs, and
+      connecting them to clean and interactive user interfaces.
+    </p>
 
-              <p className="section-text">
-                What motivates me most is the process of turning an idea into a
-                working system — from writing backend logic to seeing the frontend
-                respond correctly. I learn best by building real projects, experimenting,
-                and improving through practice, and I am eager to grow by contributing
-                to real-world applications in a collaborative environment.
-              </p>
+    <p className="section-text">
+      What motivates me most is the process of turning an idea into a
+      working system — from writing backend logic to seeing the frontend
+      respond correctly. I learn best by building real projects,
+      experimenting, and improving through practice, and I am eager to
+      grow by contributing to real-world applications in a collaborative
+      environment.
+    </p>
+  </div>
+</motion.section>
 
-            </div>
-          </section>
 
           {/* SKILLS */}
           <section className="section" id="skills">
