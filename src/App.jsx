@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 30 },
@@ -6,6 +8,24 @@ const sectionVariants = {
     opacity: 1,
     y: 0,
     transition: { duration: 0.6, ease: "easeOut" }
+  }
+};
+
+const projectsContainer = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.12
+    }
+  }
+};
+
+const projectItem = {
+  hidden: { opacity: 0, y: 25 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.4, ease: "easeOut" }
   }
 };
 
@@ -150,6 +170,29 @@ function App() {
       el.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
+   
+const [status, setStatus] = useState("idle");
+
+const sendEmail = (e) => {
+  e.preventDefault();
+  setStatus("sending");
+
+  emailjs
+    .sendForm(
+      "service_kgy0czv",
+      "template_qw23yee",     // template ID
+      e.target,
+      "MRPxaWUoaq7Dy8vUO"      //public key
+    )
+    .then(() => {
+      setStatus("success");
+      e.target.reset();
+    })
+    .catch((error) => {
+      console.error(error);
+      setStatus("error");
+    });
+};
 
   return (
     <div className="page">
@@ -277,7 +320,14 @@ function App() {
 
 
           {/* SKILLS */}
-          <section className="section" id="skills">
+          <motion.section
+  className="section"
+  id="skills"
+  variants={sectionVariants}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.2 }}
+>
   <div className="section-inner">
     <h2 className="section-title">Skills</h2>
 
@@ -287,26 +337,26 @@ function App() {
         <ul>
           <li>React.js</li>
           <li>JavaScript (ES6+)</li>
-          <li>HTML5 & CSS3</li>
+          <li>HTML5 &amp; CSS3</li>
           <li>Java</li>
           <li>Spring Boot</li>
           <li>Node.js</li>
           <li>Express.js</li>
           <li>MongoDB</li>
           <li>REST API Development</li>
-          <li>Git & GitHub</li>
+          <li>Git &amp; GitHub</li>
           <li>Axios</li>
           <li>Postman</li>
         </ul>
       </div>
 
       <div className="skill-column">
-        <h3>Testing & Quality (QA)</h3>
+        <h3>Testing &amp; Quality (QA)</h3>
         <ul>
           <li>Manual Testing</li>
           <li>Test Case Design</li>
           <li>Functional Testing</li>
-          <li>Bug Reporting & Validation</li>
+          <li>Bug Reporting &amp; Validation</li>
           <li>UI / Usability Testing</li>
         </ul>
       </div>
@@ -316,7 +366,7 @@ function App() {
         <ul>
           <li>Flutter (UI architecture)</li>
           <li>Python for AI / Computer Vision</li>
-          <li>API security & authentication</li>
+          <li>API security &amp; authentication</li>
           <li>Advanced full-stack patterns</li>
         </ul>
       </div>
@@ -324,18 +374,24 @@ function App() {
       <div className="skill-column">
         <h3>Planning to Learn</h3>
         <ul>
-          <li>Docker & containerization basics</li>
+          <li>Docker &amp; containerization basics</li>
           <li>Cloud fundamentals</li>
           <li>System design basics</li>
         </ul>
       </div>
     </div>
   </div>
-</section>
-
+</motion.section>
 
           {/* PROJECTS */}
-          <section className="section" id="projects">
+          <motion.section
+  className="section"
+  id="projects"
+  variants={sectionVariants}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.2 }}
+>
             <div className="section-inner">
               <h2 className="section-title">Projects</h2>
               <p className="section-text">
@@ -343,76 +399,124 @@ function App() {
                 what I can build. Some are completed, others are still in
                 progress.
               </p>
-              <div className="projects-grid">
-                {projects.map((project) => (
-                  <ProjectCard key={project.title} project={project} />
-                ))}
-              </div>
-            </div>
-          </section>
+              <motion.div
+                className="projects-grid"
+                variants={projectsContainer}
+    >
+      {projects.map((project) => (
+        <ProjectCard key={project.title} project={project} />
+      ))}
+    </motion.div>
+  </div>
+</motion.section>
 
           {/* ROADMAP */}
-          <section className="section" id="roadmap">
-            <div className="section-inner">
-              <h2 className="section-title">Learning Roadmap</h2>
-              <p className="section-text">
-                I like to be honest about where I am now and where I’m heading.
-                This is the current plan I’m following to grow as a developer.
-              </p>
-              <div className="roadmap-grid">
-                {roadmap.map((phase) => (
-                  <div key={phase.title} className="roadmap-card">
-                    <h3>{phase.title}</h3>
-                    <ul>
-                      {phase.items.map((item) => (
-                        <li key={item}>{item}</li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
+          <motion.section
+  className="section"
+  id="roadmap"
+  variants={sectionVariants}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.2 }}
+>
+  <div className="section-inner">
+    <h2 className="section-title">Learning Roadmap</h2>
+    <p className="section-text">
+      I like to be honest about where I am now and where I’m heading. This is the
+      current plan I’m following to grow as a developer.
+    </p>
+    <div className="roadmap-grid">
+      {roadmap.map((phase) => (
+        <div key={phase.title} className="roadmap-card">
+          <h3>{phase.title}</h3>
+          <ul>
+            {phase.items.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</motion.section>
+
 
           {/* CONTACT */}
-          <section className="section" id="contact">
-            <div className="section-inner">
-              <h2 className="section-title">Contact</h2>
-              <p className="section-text">
-                I’m open to internships, collaborations, and any chance to work
-                with teams where I can learn and contribute. If my profile
-                matches what you&apos;re looking for, feel free to reach out.
-              </p>
-              <ul className="contact-list">
-                <li>
-                  <span>Email</span>
-                  <a href="mailto:your.email@example.com">
-                    Tharukanadun711@gmail.com
-                  </a>
-                </li>
-                <li>
-                  <span>GitHub</span>
-                  <a
-                    href="https://github.com/Nadun00"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    github.com/Nadun00
-                  </a>
-                </li>
-                <li>
-                  <span>LinkedIn</span>
-                  <a
-                    href="https://www.linkedin.com/in/nadun-bandara-3551aa348?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    linkedin.com/in/nadun-bandara-3551aa348
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </section>
+         <motion.section
+  className="section"
+  id="contact"
+  variants={sectionVariants}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.2 }}
+>
+  <div className="section-inner">
+    <h2 className="section-title">Contact</h2>
+    <p className="section-text">
+      I’m open to internships, collaborations, and any chance to work
+      with teams where I can learn and contribute. If my profile
+      matches what you&apos;re looking for, feel free to reach out.
+    </p>
+    <ul className="contact-list">
+      <li>
+        <span>Email</span>
+        <a href="mailto:Tharukanadun711@gmail.com">
+          Tharukanadun711@gmail.com
+        </a>
+      </li>
+      <li>
+        <span>GitHub</span>
+        <a
+          href="https://github.com/Nadun00"
+          target="_blank"
+          rel="noreferrer"
+        >
+          github.com/Nadun00
+        </a>
+      </li>
+      <li>
+        <span>LinkedIn</span>
+        <a
+          href="https://www.linkedin.com/in/nadun-bandara-3551aa348?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+          target="_blank"
+          rel="noreferrer"
+        >
+          linkedin.com/in/nadun-bandara-3551aa348
+        </a>
+      </li>
+    </ul>
+
+    {/* New contact form */}
+    <form className="contact-form" onSubmit={sendEmail}>
+      <div className="form-row">
+        <input
+          type="text"
+          name="name"
+          placeholder="Your Name"
+          required
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Your Email"
+          required
+        />
+      </div>
+
+      <textarea
+        name="message"
+        rows="5"
+        placeholder="Your Message"
+        required
+      />
+
+      <button type="submit" className="btn primary">
+        Send Message
+      </button>
+    </form>
+  </div>
+</motion.section>
+
         </main>
 
         {/* FOOTER */}
@@ -439,7 +543,12 @@ function SkillColumn({ title, items }) {
 
 function ProjectCard({ project }) {
   return (
-    <article className="project-card">
+    <motion.article
+      className="project-card"
+      variants={projectItem}
+      whileHover={{ y: -6 }}
+      transition={{ type: "spring", stiffness: 260, damping: 20 }}
+    >
       <div className="project-header">
         <h3>{project.title}</h3>
         <p className="project-category">{project.category}</p>
@@ -479,8 +588,9 @@ function ProjectCard({ project }) {
           </a>
         )}
       </div>
-    </article>
+    </motion.article>
   );
 }
+
 
 export default App;
