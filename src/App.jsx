@@ -320,7 +320,7 @@ const sendEmail = (e) => {
 
 
           {/* SKILLS */}
-          <motion.section
+    <motion.section
   className="section"
   id="skills"
   variants={sectionVariants}
@@ -330,28 +330,45 @@ const sendEmail = (e) => {
 >
   <div className="section-inner">
     <h2 className="section-title">Skills</h2>
+    <p className="section-text">
+      These are the technologies I&apos;m most comfortable with right now, plus
+      the areas I&apos;m learning and planning to grow into.
+    </p>
 
     <div className="skills-layout">
-      <div className="skill-column">
-        <h3>Comfortable With</h3>
+      {/* Comfortable With */}
+      <motion.div
+        className="skill-card primary"
+        whileHover={{ y: -8, scale: 1.02 }}
+        transition={{ type: "spring", stiffness: 220, damping: 18 }}
+      >
+        <div className="skill-card-header">
+          <h3>Comfortable With</h3>
+          <p className="skill-hint">Stack I use most confidently</p>
+        </div>
         <ul>
           <li>React.js</li>
           <li>JavaScript (ES6+)</li>
           <li>HTML5 &amp; CSS3</li>
-          <li>Java</li>
-          <li>Spring Boot</li>
-          <li>Node.js</li>
-          <li>Express.js</li>
+          <li>Java &amp; Spring Boot</li>
+          <li>Node.js &amp; Express.js</li>
           <li>MongoDB</li>
           <li>REST API Development</li>
           <li>Git &amp; GitHub</li>
-          <li>Axios</li>
-          <li>Postman</li>
+          <li>Axios &amp; Postman</li>
         </ul>
-      </div>
+      </motion.div>
 
-      <div className="skill-column">
-        <h3>Testing &amp; Quality (QA)</h3>
+      {/* Testing & QA */}
+      <motion.div
+        className="skill-card"
+        whileHover={{ y: -8, scale: 1.02 }}
+        transition={{ type: "spring", stiffness: 220, damping: 18 }}
+      >
+        <div className="skill-card-header">
+          <h3>Testing &amp; Quality (QA)</h3>
+          <p className="skill-hint">How I think about quality</p>
+        </div>
         <ul>
           <li>Manual Testing</li>
           <li>Test Case Design</li>
@@ -359,29 +376,46 @@ const sendEmail = (e) => {
           <li>Bug Reporting &amp; Validation</li>
           <li>UI / Usability Testing</li>
         </ul>
-      </div>
+      </motion.div>
 
-      <div className="skill-column">
-        <h3>Currently Learning</h3>
+      {/* Currently Learning */}
+      <motion.div
+        className="skill-card"
+        whileHover={{ y: -8, scale: 1.02 }}
+        transition={{ type: "spring", stiffness: 220, damping: 18 }}
+      >
+        <div className="skill-card-header">
+          <h3>Currently Learning</h3>
+          <p className="skill-hint">What I&apos;m actively practicing</p>
+        </div>
         <ul>
           <li>Flutter (UI architecture)</li>
           <li>Python for AI / Computer Vision</li>
           <li>API security &amp; authentication</li>
           <li>Advanced full-stack patterns</li>
         </ul>
-      </div>
+      </motion.div>
 
-      <div className="skill-column">
-        <h3>Planning to Learn</h3>
+      {/* Planning to Learn */}
+      <motion.div
+        className="skill-card wide"
+        whileHover={{ y: -8, scale: 1.01 }}
+        transition={{ type: "spring", stiffness: 220, damping: 18 }}
+      >
+        <div className="skill-card-header">
+          <h3>Planning to Learn</h3>
+          <p className="skill-hint">Next steps in my roadmap</p>
+        </div>
         <ul>
           <li>Docker &amp; containerization basics</li>
-          <li>Cloud fundamentals</li>
-          <li>System design basics</li>
+          <li>Cloud fundamentals (deployment, monitoring)</li>
+          <li>System design basics for small projects</li>
         </ul>
-      </div>
+      </motion.div>
     </div>
   </div>
 </motion.section>
+
 
           {/* PROJECTS */}
           <motion.section
@@ -487,48 +521,55 @@ const sendEmail = (e) => {
     </ul>
 
     {/* New contact form */}
-    <motion.form className="contact-form" onSubmit={sendEmail}>
-      <div className="form-row">
-        <input
-          type="text"
-          name="name"
-          placeholder="Your Name"
-          required
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Your Email"
-          required
-        />
-      </div>
-
-      <textarea
-        name="message"
-        rows="5"
-        placeholder="Your Message"
-        required
-      />
-
-      <button
-  type="submit"
-  className="btn primary"
-  disabled={status === "sending"}
+    <motion.form
+  className="contact-form"
+  onSubmit={sendEmail}
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.5, ease: "easeOut" }}
+  viewport={{ once: true }}
 >
-  {status === "sending"
-    ? "Sending..."
-    : status === "success"
-    ? "Message Sent ✓"
-    : "Send Message"}
-</button>
+  <div className="form-row">
+    <input
+      type="text"
+      name="name"
+      placeholder="Your Name"
+      required
+    />
+    <input
+      type="email"
+      name="email"
+      placeholder="Your Email"
+      required
+    />
+  </div>
 
-{status === "error" && (
-  <p className="form-error">
-    Something went wrong. Please try again.
-  </p>
-)}
+  <textarea
+    name="message"
+    rows="5"
+    placeholder="Your Message"
+    required
+  />
 
-    </motion.form>
+  <button
+    type="submit"
+    className="btn primary"
+    disabled={status === "sending"}
+  >
+    {status === "sending"
+      ? "Sending..."
+      : status === "success"
+      ? "Message Sent ✓"
+      : "Send Message"}
+  </button>
+
+  {status === "error" && (
+    <p className="form-error">
+      Something went wrong. Please try again.
+    </p>
+  )}
+</motion.form>
+
   </div>
 </motion.section>
 
