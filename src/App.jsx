@@ -487,7 +487,7 @@ const sendEmail = (e) => {
     </ul>
 
     {/* New contact form */}
-    <form className="contact-form" onSubmit={sendEmail}>
+    <motion.form className="contact-form" onSubmit={sendEmail}>
       <div className="form-row">
         <input
           type="text"
@@ -510,10 +510,25 @@ const sendEmail = (e) => {
         required
       />
 
-      <button type="submit" className="btn primary">
-        Send Message
-      </button>
-    </form>
+      <button
+  type="submit"
+  className="btn primary"
+  disabled={status === "sending"}
+>
+  {status === "sending"
+    ? "Sending..."
+    : status === "success"
+    ? "Message Sent ✓"
+    : "Send Message"}
+</button>
+
+{status === "error" && (
+  <p className="form-error">
+    Something went wrong. Please try again.
+  </p>
+)}
+
+    </motion.form>
   </div>
 </motion.section>
 
