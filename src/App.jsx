@@ -37,12 +37,12 @@ const projects = [
     category: "Full-Stack Web Application",
     tech: ["React", "JavaScript", "Node.js", "Express.js", "MongoDB"],
     description:
-      "A financial management platform for a tea factory that digitizes sales and expense tracking and replaces manual bookkeeping with a cleaner operational workflow.",
+      "A web-based finance system built to replace manual bookkeeping in a tea factory and make daily sales and expense tracking faster and more reliable.",
     highlights: [
-      "Implemented add, edit, and delete flows for financial transactions.",
-      "Managed both sales and expense records with clear categorization.",
-      "Displayed transaction history in a clean tabular interface.",
-      "Focused on usability for non-technical users in a factory environment."
+      "Built create, update, and delete flows for financial records.",
+      "Organized sales and expenses with practical categories for day-to-day use.",
+      "Presented transaction history in a simple table that is easy to review.",
+      "Designed the workflow to be usable for non-technical staff."
     ],
     links: {
       github: "https://github.com/Nadun00/tea-factory-finance-management/tree/master",
@@ -54,13 +54,13 @@ const projects = [
     category: "Full-Stack Group Project",
     tech: ["React", "Spring Boot", "MongoDB", "REST APIs"],
     description:
-      "A collaborative skill sharing platform where users create profiles, publish skills, and interact through follow, like, and commenting features.",
+      "A full-stack platform where users can create profiles, share skills, and interact through social features such as follows, likes, and comments.",
     highlights: [
-      "Implemented like and unlike functionality for skill posts.",
-      "Built follow and unfollow flows between users.",
-      "Created a commenting system for post engagement.",
-      "Integrated frontend interactions with backend REST APIs.",
-      "Worked with MongoDB data models related to user engagement."
+      "Implemented like and unlike interactions for skill posts.",
+      "Built follow and unfollow features between users.",
+      "Developed a commenting flow to support engagement on posts.",
+      "Connected the React frontend with Spring Boot APIs.",
+      "Worked with MongoDB models for user activity and relationships."
     ],
     links: {
       github: "https://github.com/Nadun00/task-hive-learning-platform",
@@ -72,12 +72,12 @@ const projects = [
     category: "Frontend + Rule-Based AI",
     tech: ["React", "JavaScript", "Axios", "HTML5", "CSS3", "Font Awesome"],
     description:
-      "An interactive chatbot that helps identify common tea leaf diseases from visible symptoms and provides quick prevention and treatment guidance.",
+      "A rule-based chatbot that helps identify common tea leaf diseases from visible symptoms and gives quick prevention guidance through a simple conversational interface.",
     highlights: [
-      "Designed a conversational chatbot UI in React.",
-      "Implemented rule-based logic to diagnose tea leaf diseases.",
-      "Provided instant prevention and treatment suggestions.",
-      "Focused on usability for farmers and non-technical users."
+      "Built the chatbot interface in React.",
+      "Implemented rule-based diagnosis logic based on visible leaf symptoms.",
+      "Returned instant suggestions for prevention and treatment.",
+      "Kept the interaction simple and clear for non-technical users."
     ],
     links: {
       github: "https://github.com/Nadun00/simple-rule_based-AI/tree/main",
@@ -99,13 +99,13 @@ const projects = [
       "Mongoose"
     ],
     description:
-      "A full-stack inventory platform for a dental clinic that modernizes stock tracking for supplies and equipment through a simple digital workflow.",
+      "A full-stack inventory system for a dental clinic that improves how supplies and equipment are tracked, updated, and reviewed.",
     highlights: [
-      "Built a single-page application with React and Material UI.",
-      "Implemented CRUD operations for inventory items.",
+      "Built a single-page application using React and Material UI.",
+      "Implemented CRUD operations for inventory items and stock records.",
       "Integrated frontend flows with backend REST APIs using Axios.",
       "Developed backend services with Node.js, Express, and MongoDB.",
-      "Added PDF export functionality using html2canvas and jsPDF."
+      "Added PDF export support for reporting and record sharing."
     ],
     links: {
       github: "https://github.com/Nadun00/InventoryManagement/tree/main",
@@ -117,7 +117,7 @@ const projects = [
 const skillGroups = [
   {
     title: "Core Stack",
-    hint: "Technologies I build with most confidently",
+    hint: "Tools I am most comfortable using in projects",
     tone: "primary",
     items: [
       "React.js",
@@ -133,7 +133,7 @@ const skillGroups = [
   },
   {
     title: "Quality Mindset",
-    hint: "How I approach reliability and usability",
+    hint: "How I think about usability, testing, and stability",
     tone: "neutral",
     items: [
       "Manual testing",
@@ -145,7 +145,7 @@ const skillGroups = [
   },
   {
     title: "Currently Learning",
-    hint: "Areas I am actively sharpening",
+    hint: "Areas I am actively improving through practice",
     tone: "neutral",
     items: [
       "Flutter UI architecture",
@@ -156,7 +156,7 @@ const skillGroups = [
   },
   {
     title: "Next Growth Areas",
-    hint: "What I want to add to my toolkit next",
+    hint: "Topics I plan to strengthen next",
     tone: "subtle",
     items: [
       "Docker and containerization basics",
@@ -200,7 +200,7 @@ const roadmap = [
 const highlights = [
   { value: "4+", label: "Hands-on full-stack projects" },
   { value: "MERN", label: "Primary development stack" },
-  { value: "Spring", label: "Backend API experience" }
+  { value: "API", label: "Backend work with Spring Boot and Node.js" }
 ];
 
 const contactLinks = [
@@ -324,15 +324,15 @@ function App() {
                 </div>
 
                 <h1 className="hero-title">
-                  Building full-stack products that feel useful, thoughtful, and
-                  ready for real users.
+                  Full-stack developer focused on building clean, useful
+                  software for real-world problems.
                 </h1>
 
                 <p className="hero-subtitle">
-                  I am a software engineering student from Sri Lanka focused on
-                  React, Node.js, Spring Boot, MongoDB, and practical product
-                  development. I enjoy turning ideas into working systems,
-                  especially projects that solve clear real-world problems.
+                  I am Nadun Bandara, a software engineering student from Sri
+                  Lanka with hands-on experience in React, Node.js, Spring Boot,
+                  and MongoDB. I enjoy building web applications that are clear,
+                  practical, and useful to the people who depend on them.
                 </p>
 
                 <div className="hero-actions">
@@ -340,20 +340,20 @@ function App() {
                     className="btn primary"
                     onClick={() => scrollToSection("projects")}
                   >
-                    Explore Projects
+                    View Projects
                   </button>
                   <a
                     className="btn secondary"
                     href="/Nadun_Bandara_FullStack_Intern.pdf"
                     download
                   >
-                    Download CV
+                    Download Resume
                   </a>
                   <button
                     className="btn ghost"
                     onClick={() => scrollToSection("contact")}
                   >
-                    Contact Me
+                    Let's Talk
                   </button>
                 </div>
 
@@ -375,11 +375,11 @@ function App() {
 
                   <div className="hero-card-summary">
                     <p className="summary-label">Current focus</p>
-                    <h2>Full-stack internships and production-ready project work</h2>
+                    <h2>Looking for full-stack internships and opportunities to build useful products</h2>
                     <ul>
-                      <li>Frontend interfaces with React</li>
+                      <li>Frontend development with React</li>
                       <li>Backend APIs with Spring Boot and Node.js</li>
-                      <li>Real projects that solve practical problems</li>
+                      <li>Projects shaped around practical user needs</li>
                     </ul>
                   </div>
                 </div>
@@ -398,36 +398,35 @@ function App() {
             <div className="section-inner">
               <SectionHeading
                 eyebrow="About"
-                title="A developer focused on practical systems, steady growth, and clear product thinking."
-                description="Your portfolio already had good substance. The redesign now gives that substance stronger structure, clearer hierarchy, and a more trustworthy presentation for recruiters and clients."
+                title="I enjoy building reliable software and learning by working on real projects."
+                description="My strongest growth has come from turning ideas into working products, improving them through feedback, and learning what makes software genuinely useful."
               />
 
               <div className="about-grid">
                 <div className="about-copy">
                   <p className="section-text">
-                    I am currently seeking a{" "}
+                    I am currently looking for a{" "}
                     <strong>full-stack development internship</strong> where I
-                    can contribute to real products and continue growing as an
-                    engineer. I enjoy working across frontend and backend and I
-                    get the most satisfaction from building complete systems that
-                    actually solve a user need.
+                    can contribute to real products and keep growing as an
+                    engineer. I like working across both frontend and backend,
+                    and I especially enjoy building complete systems that solve
+                    a clear problem.
                   </p>
                   <p className="section-text">
                     I have hands-on experience with{" "}
                     <strong>
                       Java, Spring Boot, React, Node.js, Express, and MongoDB
                     </strong>
-                    , with a strong interest in REST APIs, database-driven
-                    applications, and clean interface development. I like
-                    structuring backend logic just as much as I enjoy shaping
-                    frontend experiences.
+                    , and I am especially interested in REST APIs,
+                    database-driven applications, and clean user interfaces. I
+                    enjoy structuring backend logic just as much as I enjoy
+                    building the frontend that people interact with.
                   </p>
                   <p className="section-text">
-                    What drives me most is the process of taking an idea from
-                    concept to working product. I learn best by building,
-                    testing, iterating, and improving through practice, and I am
-                    excited by opportunities to work with teams that value
-                    thoughtful software and continuous learning.
+                    I learn best by building, testing, and improving through
+                    practice. My goal is to join a team where I can contribute
+                    to meaningful work, keep learning quickly, and become a
+                    stronger software engineer through real experience.
                   </p>
                 </div>
 
@@ -435,16 +434,16 @@ function App() {
                   <InfoCard
                     title="What I bring"
                     items={[
-                      "Full-stack project experience across frontend and backend",
-                      "A practical mindset focused on real users and workflows",
-                      "Strong willingness to learn quickly in collaborative teams"
+                      "Hands-on experience across frontend and backend development",
+                      "A practical approach focused on real users and workflows",
+                      "A strong willingness to learn and improve in collaborative teams"
                     ]}
                   />
                   <InfoCard
                     title="Best fit roles"
                     items={[
                       "Full-stack development internships",
-                      "Frontend-heavy software engineering roles",
+                      "Junior software engineering roles",
                       "Freelance web application work for small businesses"
                     ]}
                   />
@@ -464,8 +463,8 @@ function App() {
             <div className="section-inner">
               <SectionHeading
                 eyebrow="Skills"
-                title="A balanced stack with strong frontend foundations and growing backend depth."
-                description="The section is now organized by confidence level and growth direction so recruiters can quickly understand what you use today and where you are heading next."
+                title="My work is centered on modern web development, with a strong focus on full-stack fundamentals."
+                description="These are the tools I use most often, the habits I bring into projects, and the areas I am currently developing further."
               />
 
               <div className="skills-layout">
@@ -502,8 +501,8 @@ function App() {
             <div className="section-inner">
               <SectionHeading
                 eyebrow="Projects"
-                title="Projects that show product thinking, full-stack execution, and problem-solving."
-                description="The project cards now emphasize outcome, stack, and credibility first, with cleaner scanning, stronger hover feedback, and better visual separation."
+                title="A selection of projects that reflect how I approach building software."
+                description="Most of my learning has come from building end-to-end applications, solving practical problems, and improving how people use the final product."
               />
 
               <motion.div
@@ -531,8 +530,8 @@ function App() {
             <div className="section-inner">
               <SectionHeading
                 eyebrow="Roadmap"
-                title="A transparent growth plan that shows direction, discipline, and ambition."
-                description="Including a roadmap works well for internships when it feels intentional. This version is more concise, more readable, and framed as a professional growth narrative."
+                title="I care a lot about steady improvement and building depth over time."
+                description="These are the areas I am actively working on as I move toward stronger full-stack and software engineering roles."
               />
 
               <div className="roadmap-grid">
@@ -564,8 +563,8 @@ function App() {
             <div className="section-inner">
               <SectionHeading
                 eyebrow="Contact"
-                title="Let's connect about internships, freelance work, or collaborative opportunities."
-                description="The contact area is now split into clear connection options and a more polished message form so it feels credible and easy to use."
+                title="If you think I could be a good fit for your team or project, I'd be glad to connect."
+                description="I am open to internships, junior roles, and freelance opportunities where I can contribute, learn quickly, and keep growing through real work."
               />
 
               <div className="contact-grid">
@@ -586,12 +585,12 @@ function App() {
                   </div>
 
                   <div className="contact-note">
-                    <p className="summary-label">What I am open to</p>
-                    <h3>Internships, freelance collaborations, and junior software roles</h3>
+                    <p className="summary-label">Open to</p>
+                    <h3>Internships, freelance work, and junior software opportunities</h3>
                     <p>
-                      If your team needs someone who can learn quickly, build
-                      responsibly, and contribute across the stack, I would love
-                      to hear from you.
+                      If you are looking for someone who can contribute across
+                      the stack, communicate clearly, and keep improving through
+                      hands-on work, feel free to reach out.
                     </p>
                   </div>
                 </div>
@@ -640,7 +639,7 @@ function App() {
                         ? "Sending..."
                         : status === "success"
                           ? "Message sent"
-                          : "Send message"}
+                          : "Start a conversation"}
                     </button>
 
                     <p
@@ -661,7 +660,7 @@ function App() {
         </main>
 
         <footer className="site-footer">
-          <p>{`(c) ${new Date().getFullYear()} Nadun Bandara. Built with focus, clarity, and continuous improvement.`}</p>
+          <p>{`(c) ${new Date().getFullYear()} Nadun Bandara. Designed and built with React.`}</p>
         </footer>
       </div>
     </div>

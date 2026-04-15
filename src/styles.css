@@ -345,9 +345,9 @@ img {
 }
 
 .hero-subtitle {
-  max-width: 58ch;
+  max-width: 60ch;
   margin: 0 0 26px;
-  font-size: 1.02rem;
+  font-size: 1.04rem;
 }
 
 .hero-actions {
@@ -522,7 +522,7 @@ img {
   position: relative;
   z-index: 1;
   max-width: 760px;
-  margin-bottom: 28px;
+  margin-bottom: 34px;
 }
 
 .section-title {
@@ -535,6 +535,7 @@ img {
 
 .section-lead {
   margin: 0;
+  max-width: 62ch;
   font-size: 1rem;
 }
 
@@ -550,6 +551,7 @@ img {
 .section-text {
   margin: 0;
   font-size: 1rem;
+  max-width: 67ch;
 }
 
 .section-text + .section-text {
@@ -649,6 +651,7 @@ img {
   flex-direction: column;
   gap: 18px;
   padding: 24px;
+  min-height: 100%;
   transition:
     transform 180ms ease,
     border-color 180ms ease,
@@ -659,6 +662,7 @@ img {
 .project-card-top h3 {
   margin-top: 10px;
   line-height: 1.24;
+  font-size: 1.22rem;
 }
 
 .project-category {
@@ -673,6 +677,7 @@ img {
 
 .project-description {
   margin: 0;
+  line-height: 1.72;
 }
 
 .project-tags {
@@ -698,15 +703,25 @@ img {
   flex-wrap: wrap;
   gap: 16px;
   margin-top: auto;
+  padding-top: 6px;
 }
 
 .link {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  min-height: 40px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  background: rgba(255, 255, 255, 0.03);
   color: var(--text);
   font-weight: 600;
-  transition: color 180ms ease, transform 180ms ease;
+  transition:
+    color 180ms ease,
+    transform 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease;
 }
 
 .link::after {
@@ -718,6 +733,8 @@ img {
 .link:hover {
   color: var(--accent);
   transform: translateX(2px);
+  border-color: rgba(115, 224, 194, 0.24);
+  background: rgba(115, 224, 194, 0.08);
 }
 
 .roadmap-grid {
@@ -747,6 +764,7 @@ img {
 .contact-panel {
   display: grid;
   gap: 18px;
+  align-content: start;
 }
 
 .contact-stack {
@@ -756,7 +774,7 @@ img {
 
 .contact-item,
 .contact-note {
-  padding: 22px;
+  padding: 22px 22px 20px;
   transition:
     transform 180ms ease,
     border-color 180ms ease,
@@ -767,6 +785,19 @@ img {
   display: flex;
   flex-direction: column;
   gap: 6px;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-item::after {
+  content: "Open";
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
 }
 
 .contact-item span {
@@ -779,11 +810,26 @@ img {
   word-break: break-word;
 }
 
+.contact-note {
+  padding: 26px 22px;
+  background:
+    radial-gradient(circle at top right, rgba(115, 224, 194, 0.1), transparent 32%),
+    rgba(255, 255, 255, 0.04);
+}
+
+.contact-note h3 {
+  max-width: 22ch;
+}
+
 .contact-form {
   display: flex;
   flex-direction: column;
   gap: 18px;
-  padding: 24px;
+  justify-content: space-between;
+  padding: 26px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.025)),
+    rgba(255, 255, 255, 0.03);
 }
 
 .form-row {
@@ -832,6 +878,7 @@ img {
   justify-content: space-between;
   gap: 16px;
   flex-wrap: wrap;
+  padding-top: 4px;
 }
 
 .form-status {
@@ -877,6 +924,11 @@ img {
 
   .hero-side {
     max-width: 540px;
+  }
+
+  .contact-panel,
+  .contact-form {
+    max-width: 100%;
   }
 
   .roadmap-grid {
@@ -935,6 +987,11 @@ img {
   .section-lead,
   .section-text {
     font-size: 0.96rem;
+  }
+
+  .contact-item::after {
+    top: 14px;
+    right: 14px;
   }
 
   .btn {
